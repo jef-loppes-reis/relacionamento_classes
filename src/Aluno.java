@@ -22,9 +22,9 @@ public class Aluno {
         System.out.println("Aluno: ");
         System.out.println("Notas: " + notas);
         if (curso != null) {
-            System.out.println("Curso: " + curso.getNome()); // Supondo que a classe Curso tenha um método getNome().
+            System.out.println("Curso: " + curso.getNome());
         } else {
-            System.out.println("Curso: Nenhum curso atribuído");
+            System.out.println("Curso: -");
         }
     }
 }

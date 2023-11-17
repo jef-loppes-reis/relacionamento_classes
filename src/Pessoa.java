@@ -58,7 +58,7 @@ public class Pessoa {
         System.out.println("CPF: " + cpf);
         System.out.println("Email: " + email);
         System.out
-                .println("Endereço: " + endereco.getRua() + ", " + endereco.getCidade() + ", " + endereco.getEstado());
+                .println("Endereço: " + endereco.getRua() + " | " + endereco.getCidade() + " | " + endereco.getEstado());
 
         if (!telefones.isEmpty()) {
             System.out.println("Telefones: ");

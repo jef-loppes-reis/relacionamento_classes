@@ -43,7 +43,7 @@ public class Professor {
         System.out.println("Salário: " + salario);
 
         if (!cursos.isEmpty()) {
-            System.out.println("Cursos lecionados: ");
+            System.out.println("Cursos: ");
             for (Curso curso : cursos) {
                 System.out.println(curso.getNome());
             }
