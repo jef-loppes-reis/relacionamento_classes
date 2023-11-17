@@ -1,29 +1,29 @@
 public class Endereco {
-    private String ruaEndereco;
-    private String cidadeEndereco;
-    private String estadoEndereco;
+    private String rua;
+    private String cidade;
+    private String estado;
 
-    public String getRuaEndereco() {
-        return ruaEndereco;
+    public void setRua(String rua) {
+        this.rua = rua;
     }
 
-    public void setRuaEndereco(String ruaEndereco) {
-        this.ruaEndereco = ruaEndereco;
+    public String getRua() {
+        return rua;
     }
 
-    public String getCidadeEndereco() {
-        return cidadeEndereco;
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
-    public void setCidadeEndereco(String cidadeEndereco) {
-        this.cidadeEndereco = cidadeEndereco;
+    public String getCidade() {
+        return cidade;
     }
 
-    public String getEstadoCidade() {
-        return estadoEndereco;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
-    public void setEstadoCidade(String estadoCidade) {
-        this.estadoEndereco = estadoCidade;
+    public String getEstado() {
+        return estado;
     }
 }

@@ -1,59 +1,70 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Pessoa {
+    private String nome;
+    private String cpf;
+    private String email;
+    private List<Telefone> telefones;
+    private Endereco endereco;
 
-    private String nomePessoa;
-    private String cpfPessoa;
-    private String emailPessoa;
-    private ArrayList<Telefone> telefones;
-    private ArrayList<Endereco> enderecos;
-
-    public getNomePessoa() {
-        return nomePessoa;
+    public Pessoa() {
+        this.telefones = new ArrayList<>();
     }
 
-    public void setNomePessoa() {
-        this.nomePessoa = nomePessoa;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public getCpfPessoa() {
-        return cpfPessoa;
+    public String getNome() {
+        return nome;
     }
 
-    public void setCpfPessoa() {
-        this.cpfPessoa = cpfPessoa;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public getEmailPessoa() {
-        return emailPessoa;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setEmailPessoa() {
-        this.emailPessoa = emailPessoa;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public ArrayList<Telefone> getTelefones() {
+    public String getEmail() {
+        return email;
+    }
+
+    public void addTelefone(Telefone telefone) {
+        telefones.add(telefone);
+    }
+
+    public List<Telefone> getTelefones() {
         return telefones;
     }
 
-    public void setTelefones(ArrayList<Telefone> telefones) {
-        this.telefones = telefones;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
-    public ArrayList<Endereco> getEnderecos() {
-        return enderecos;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setEnderecos(ArrayList<Endereco> enderecos) {
-        this.enderecos = enderecos;
-    }
+    public void imprimir() {
+        System.out.println("Pessoa:");
+        System.out.println("Nome: " + nome);
+        System.out.println("CPF: " + cpf);
+        System.out.println("Email: " + email);
+        System.out
+                .println("Endereço: " + endereco.getRua() + ", " + endereco.getCidade() + ", " + endereco.getEstado());
 
-    public void imprimirPessoa() {
-        System.out.println("Nome: " + getNomePessoa());
-        System.out.println("Telefones:");
-        for (int i = 0; i < getTelefones().size(); i++) {
-            System.out.println(getTelefones().get(i).getNumeroTel());
+        if (!telefones.isEmpty()) {
+            System.out.println("Telefones: ");
+            for (Telefone telefone : telefones) {
+                System.out.println(telefone.getTipo() + ": " + telefone.getDdd() + " " + telefone.getNumero());
+            }
         }
     }
-
 }

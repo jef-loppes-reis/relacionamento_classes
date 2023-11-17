@@ -1,41 +1,52 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Professor {
-    private String titulacaoProfessor;
-    private double salarioProfessor;
-    private ArrayList<Curso> cursos = new ArrayList<>();
+    private String titulacao;
+    private double salario;
+    private List<Curso> cursos;
 
-    public String getTitulacaoProfessor() {
-        return titulacaoProfessor;
+    public Professor() {
+        this.cursos = new ArrayList<>();
     }
 
-    public void setTitulacaoProfessor(String titulacaoProfessor) {
-        this.titulacaoProfessor = titulacaoProfessor;
+    public void setTitulacao(String titulacao) {
+        this.titulacao = titulacao;
     }
 
-    public double getSalarioProfessor() {
-        return salarioProfessor;
+    public String getTitulacao() {
+        return titulacao;
     }
 
-    public void setSalarioProfessor(double salarioProfessor) {
-        this.salarioProfessor = salarioProfessor;
+    public void setSalario(double salario) {
+        this.salario = salario;
     }
 
-    public ArrayList<Curso> getCursos() {
+    public double getSalario() {
+        return salario;
+    }
+
+    public List<Curso> getCursos() {
         return cursos;
     }
 
-    public void addCurso(Curso curso){
-        curso.addTitulacaoProfessor(this);
-        cursos.add(curso);
-    }
-
-    public void imprimir(){
-        System.out.println("Titulacao: "+getTitulacaoProfessor());
-        System.out.println("Cursos associados aos professores");
-        for(int i = 0; i < cursos.size();i++ ){
-            System.out.println(" "+getTitulacaoProfessor().get(i).getSalarioProfessor());
+    public void addCurso(Curso curso) {
+        if (!cursos.contains(curso)) {
+            cursos.add(curso);
+            curso.addProfessor(this);
         }
     }
 
+    public void imprimir() {
+        System.out.println("Professor:");
+        System.out.println("Titulação: " + titulacao);
+        System.out.println("Salário: " + salario);
+
+        if (!cursos.isEmpty()) {
+            System.out.println("Cursos lecionados: ");
+            for (Curso curso : cursos) {
+                System.out.println(curso.getNome());
+            }
+        }
+    }
 }
